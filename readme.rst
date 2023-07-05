@@ -5,12 +5,10 @@ CodeIgniter3 - RESTfull API With Chriskacerguis
 Program sederhana codeginiter 3 RESTfull API
 
 *******************
-Release Information
+API Documentation with Postman
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+https://documenter.getpostman.com/view/23897308/2s93zE41Hh
 
 **************************
 Changelog and New Features
