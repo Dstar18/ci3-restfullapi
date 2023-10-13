@@ -19,7 +19,7 @@ class Customers_model extends CI_Model{
     }
 
     public function get($id){
-        $cekID  = $this->db->where('idCustomer', $id)->get('tb_customers');
+        $cekID  = $this->db->where('id', $id)->get('tb_customers');
         if($cekID->num_rows()>0){
             $result = $this->Tbl_customers_model->get($id);
             return to_obj([
@@ -39,8 +39,7 @@ class Customers_model extends CI_Model{
     }
 
     public function insert($post){
-        if($post == null || empty($post['nik']) || empty($post['nama_customer']) || empty($post['telepon']) || empty($post['dusun']) || 
-        empty($post['rt']) || empty($post['rw']) || empty($post['kelurahan']) || empty($post['kecamatan'])){
+        if($post == null || empty($post['nik']) || empty($post['nama']) || empty($post['jenisKelamin']) || empty($post['alamat'])){
             return to_obj([
                 "status"    => 502,
                 "message"   => "Field tidak boleh kosong",
@@ -50,14 +49,10 @@ class Customers_model extends CI_Model{
         }else{
 
             $data = array(
-                'nik'               => $post['nik'],
-                'nama_customer'     => $post['nama_customer'],
-                'telepon'           => $post['telepon'],
-                'dusun'             => $post['dusun'],
-                'rt'                => $post['rt'],
-                'rw'                => $post['rw'],
-                'kelurahan'         => $post['kelurahan'],
-                'kecamatan'         => $post['kecamatan']
+                'nik'           => $post['nik'],
+                'nama'          => $post['nama'],
+                'jenisKelamin'  => $post['jenisKelamin'],
+                'alamat'        => $post['alamat']
             );
             $cekNIK = $this->db->where('nik',$data['nik'])->get('tb_customers');
             if($cekNIK->num_rows()>0){
@@ -81,7 +76,7 @@ class Customers_model extends CI_Model{
     }
 
     public function update($post){
-        if($post == null || empty($post['idCustomer']) || empty($post['nama_customer']) || empty($post['telepon']) || empty($post['kecamatan'])){
+        if($post == null || empty($post['id']) || empty($post['nik']) || empty($post['nama']) || empty($post['jenisKelamin']) || empty($post['alamat'])){
             return to_obj([
                 "status"    => 502,
                 "message"   => "Field tidak boleh kosong",
@@ -90,15 +85,16 @@ class Customers_model extends CI_Model{
             ]);
         }else{
             $data = array(
-                'idCustomer'        => $post['idCustomer'],
-                'nama_customer'     => $post['nama_customer'],
-                'telepon'           => $post['telepon'],
-                'kecamatan'         => $post['kecamatan']
+                'id'            => $post['id'],
+                'nik'           => $post['nik'],
+                'nama'          => $post['nama'],
+                'jenisKelamin'  => $post['jenisKelamin'],
+                'alamat'        => $post['alamat']
             );
-            $cekID  = $this->db->where('idCustomer', $data['idCustomer'])->get('tb_customers');
+            $cekID  = $this->db->where('id', $data['id'])->get('tb_customers');
             if($cekID->num_rows()>0){
                 $this->Tbl_customers_model->update($data);
-                $result = $this->Tbl_customers_model->get($data['idCustomer']);
+                $result = $this->Tbl_customers_model->get($data['id']);
                 return to_obj([
                     "status"    => 200,
                     "message"   => "Update successfully",
@@ -118,7 +114,7 @@ class Customers_model extends CI_Model{
     }
 
     public function delete($id){
-        $cekID  = $this->db->where('idCustomer', $id)->get('tb_customers');
+        $cekID  = $this->db->where('id', $id)->get('tb_customers');
         if($cekID->num_rows()>0){
             $result = $this->Tbl_customers_model->delete($id);
             return to_obj([
