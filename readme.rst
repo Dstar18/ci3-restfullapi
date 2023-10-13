@@ -8,4 +8,4 @@ Program sederhana codeginiter 3 RESTfull API
 API Documentation with Postman
 *******************
 
-https://documenter.getpostman.com/view/23897308/2s93zE41Hh
+https://documenter.getpostman.com/view/28370613/2s9YR3dvw5
