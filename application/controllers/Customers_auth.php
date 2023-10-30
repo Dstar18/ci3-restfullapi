@@ -71,7 +71,7 @@ class Customers_auth extends MY_Controller{
         }
     }
 
-    public function index_patch(){
+    public function index_put(){
         if(!isset($_SERVER['PHP_AUTH_USER'])){
             header("WWW-Authenticate: Basic realm=\"Private Area\"");
             $result = ([
