@@ -7,7 +7,6 @@ class Customers extends MY_Controller{
         parent::__construct();
         $this->load->model(['Customers_model']);
     }
-
     public function index_get($id=false){
         if($id == ''){
             $result = $this->Customers_model->gets();

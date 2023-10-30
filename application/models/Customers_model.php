@@ -7,7 +7,6 @@ class Customers_model extends CI_Model{
         parent::__construct();
         $this->load->model('tabel/Tbl_customers_model');
     }
-
     public function gets(){
         $result = $this->Tbl_customers_model->gets();
         return to_obj([
