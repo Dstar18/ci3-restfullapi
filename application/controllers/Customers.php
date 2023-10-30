@@ -23,7 +23,7 @@ class Customers extends MY_Controller{
         $this->response($result, $result->status);
     }
 
-    public function index_patch(){
+    public function index_put(){
         $post   = $this->input->input_stream(null, TRUE);
         $result = $this->Customers_model->update($post);
         
