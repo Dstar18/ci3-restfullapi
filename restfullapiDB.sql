@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 13, 2023 at 01:42 PM
+-- Generation Time: Oct 30, 2023 at 11:06 AM
 -- Server version: 8.0.34-0ubuntu0.22.04.1
 -- PHP Version: 7.4.33
 
@@ -45,8 +45,7 @@ INSERT INTO `tb_customers` (`id`, `nik`, `nama`, `jenisKelamin`, `alamat`) VALUE
 (3, 12343, 'Nami', 'Perempuan', 'Desa Cocoyasi'),
 (4, 12342, 'Nico Robin', 'Perempuan', 'Pulau Ohara'),
 (5, 11111, 'The boy', 'Laki-laki', 'mars'),
-(6, 22222, 'The girl', 'Perempuan', 'bulan'),
-(8, 33333, 'Joko', 'Laki-laki', 'Pluto');
+(6, 22222, 'Alice', 'Perempuan', 'Bulan');
 
 --
 -- Indexes for dumped tables
